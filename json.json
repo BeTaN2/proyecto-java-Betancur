@@ -1,0 +1,20 @@
+ {
+    "titulo" : "Lista de tareas",
+    "tareas" : [
+      {
+        "descripcion": "Comprar comestibles",
+        "completada": false
+      },
+      {
+        "descripcion": "Hacer ejercicio",
+        "completada": true
+      },
+      {
+        "descripcion": "Estudiar para el examen",
+        "completada": false
+      }
+    ]
+}
+
+
+

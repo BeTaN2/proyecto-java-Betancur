@@ -1,34 +1,90 @@
 
-let nombre = prompt("Por favor, ingresa tu nombre:");
+/* let nombre = prompt("Por favor, ingresa tu nombre:");
 alert("Hola, " + nombre + "! Bienvenido.");
 
-/* array de objetos */
+/* array de objetos 
 let personas = [
     { nombre: "Juan", edad: 30 },
     { nombre: "María", edad: 25 },
     { nombre: "Carlos", edad: 35 }
 ];
 
-/*Acceder a los objetos dentro del array  */
+/*Acceder a los objetos dentro del array  
 console.log(personas[0].nombre); 
 console.log(personas[1].edad);   
 
-/*  Modificar un objeto dentro del array*/
+/*  Modificar un objeto dentro del array
 personas[1].edad = 40;
 
-/*  nuevo objeto al array*/
+/*  nuevo objeto al array
 let nuevaPersona = { nombre: "Laura", edad: 28 };
 personas.push(nuevaPersona);
 
- /*Recorrer el array */
+/*Recorrer el array 
 for (let i = 0; i < personas.length; i++) {
     console.log(personas[i].nombre + " tiene " + personas[i].edad + " años.");
 }
 
 
-/* Acceder a las propiedades mediante variables */
+/* Acceder a las propiedades mediante variables 
 let propiedad = "nombre";
 console.log(personas[1][propiedad]); 
+*/
+/* json */
+let Listatareas = {
+    "titulo" : "Lista de tareas",
+    "tareas" : [
+        {
+        "descripcion": "Comprar comestibles",
+        "completada": false
+      },
+      {
+        "descripcion": "Hacer ejercicio",
+        "completada": true
+      },
+      {
+        "descripcion": "Estudiar para el examen",
+        "completada": false
+      }
+    ]
+}
+let titulo = Listatareas.titulo;
+let tareas = Listatareas.tareas;
+
+console.log("Titilo" + titulo)
+console.log("Tareas" + tareas)
+
+function obtener_localstorage(){
+    let persona = JSON.parse (localStorage.getItem ("persona")) 
+    console.log(persona)
+}
+
+function guardar_localstorage (){
+    let persona = {
+        nombre : "Juan",
+        edad: 30,
+        ciudad: "Nueva York",
+        casado: false,
+        hobbies: ["lectura", "senderismo"]
+    }
+}
+localStorage.setItem ("nombre", JSON.stringify(persona));
+
+/* dom */
+let nombreInput = document.getElementById("nombreInput");
+let saludarButton = document.getElementById("saludarButton");
+let mensajeSaludo = document.getElementById("mensajeSaludo");
+
+// Agregar un evento 
+saludarButton.addEventListener("click", function() {
+    let nombre = nombreInput.value;
+    if (nombre) {
+        mensajeSaludo.textContent = "¡Hola, " + nombre + "!";
+    } else {
+        mensajeSaludo.textContent = "Por favor, ingresa tu nombre.";
+    }
+});
+
 
 /* calculadora */
 function sumar() {
